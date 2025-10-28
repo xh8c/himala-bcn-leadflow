@@ -38,18 +38,19 @@ const BookingForm = () => {
     setIsSubmitting(true);
     
     try {
-      // Create form data for Netlify Forms
-      const formData = new FormData();
-      formData.append("form-name", "spa-booking");
-      formData.append("fullName", data.fullName);
-      formData.append("phone", data.phone);
-      formData.append("treatment", data.treatment);
-      formData.append("preferredTime", data.preferredTime);
+      // Encode form data properly for Netlify Forms
+      const formBody = new URLSearchParams({
+        "form-name": "spa-booking",
+        "fullName": data.fullName,
+        "phone": data.phone,
+        "treatment": data.treatment,
+        "preferredTime": data.preferredTime,
+      }).toString();
 
       const response = await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData as any).toString(),
+        body: formBody,
       });
 
       if (response.ok) {
