@@ -86,14 +86,6 @@ const BookingForm = () => {
             </p>
           </div>
 
-          {/* Hidden form for Netlify */}
-          <form name="spa-booking" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
-            <input type="text" name="fullName" />
-            <input type="text" name="phone" />
-            <input type="text" name="treatment" />
-            <input type="text" name="preferredTime" />
-          </form>
-
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             <div className="space-y-2">
               <Label htmlFor="fullName" className="text-base font-medium">

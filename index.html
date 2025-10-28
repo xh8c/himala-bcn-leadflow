@@ -22,6 +22,15 @@
 
   <body>
     <div id="root"></div>
+    
+    <!-- Static form for Netlify Forms detection -->
+    <form name="spa-booking" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="fullName" />
+      <input type="text" name="phone" />
+      <input type="text" name="treatment" />
+      <input type="text" name="preferredTime" />
+    </form>
+    
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
