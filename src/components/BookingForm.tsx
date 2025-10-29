@@ -74,22 +74,22 @@ const BookingForm = () => {
   };
 
   return (
-    <section id="booking-form" className="relative -mt-32 px-4 pb-20 z-20">
+    <section id="booking-form" className="relative -mt-16 md:-mt-32 px-4 pb-12 md:pb-20 z-20">
       <div className="container mx-auto max-w-2xl">
-        <div className="bg-card rounded-2xl shadow-card p-8 md:p-12 animate-fade-in-slow">
-          <div className="text-center mb-8">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-3">
+        <div className="bg-card rounded-2xl shadow-card p-6 md:p-12 animate-fade-in-slow">
+          <div className="text-center mb-6 md:mb-8">
+            <h2 className="font-serif text-2xl md:text-4xl font-bold text-foreground mb-2 md:mb-3">
               Escape Barcelona's chaos
             </h2>
-            <p className="text-accent text-xl font-semibold mb-4">
+            <p className="text-accent text-lg md:text-xl font-semibold mb-3 md:mb-4">
               15% off your first massage
             </p>
-            <p className="text-muted-foreground text-base leading-relaxed max-w-xl mx-auto">
+            <p className="text-muted-foreground text-sm md:text-base leading-relaxed max-w-xl mx-auto px-2">
               Barcelona life can drain you fast. At Himala BCN, we help you slow down. Your first massage comes with 15% off—a small push to finally give yourself that break.
             </p>
           </div>
 
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 md:space-y-6">
             <div className="space-y-2">
               <Label htmlFor="fullName" className="text-base font-medium">
                 Full Name *
@@ -129,11 +129,10 @@ const BookingForm = () => {
                   <SelectValue placeholder="Select a treatment..." />
                 </SelectTrigger>
                 <SelectContent className="bg-popover">
-                  <SelectItem value="relaxing-massage">Relaxing Massage</SelectItem>
-                  <SelectItem value="deep-tissue">Deep Tissue Massage</SelectItem>
-                  <SelectItem value="hot-stone">Hot Stone Therapy</SelectItem>
-                  <SelectItem value="candle-massage">Warm Candle Massage</SelectItem>
-                  <SelectItem value="not-sure">Not Sure Yet</SelectItem>
+                  <SelectItem value="relaxing-massage">Relaxing Massage – melt away stress and tension</SelectItem>
+                  <SelectItem value="deep-tissue">Deep Tissue Massage – fix stiff muscles & back pain</SelectItem>
+                  <SelectItem value="hot-stone">Hot Stone / Candle Massage – deep warmth for total calm</SelectItem>
+                  <SelectItem value="not-sure">Not Sure Yet – help me choose the best option</SelectItem>
                 </SelectContent>
               </Select>
               {errors.treatment && (
@@ -159,7 +158,7 @@ const BookingForm = () => {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full h-14 text-lg font-semibold bg-accent hover:bg-accent/90 text-accent-foreground rounded-full shadow-soft hover:shadow-card transition-all duration-300 hover:scale-[1.02]"
+              className="w-full h-12 md:h-14 text-base md:text-lg font-semibold bg-accent hover:bg-accent/90 text-accent-foreground rounded-full shadow-soft hover:shadow-card transition-all duration-300 hover:scale-[1.02]"
             >
               {isSubmitting ? "Sending..." : "Claim My 15% Off & Book My Spot"}
             </Button>

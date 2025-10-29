@@ -13,17 +13,17 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-20 px-4 bg-background">
+    <section className="py-12 md:py-20 px-4 bg-background">
       <div className="container mx-auto max-w-6xl">
-        <h2 className="font-serif text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
+        <h2 className="font-serif text-2xl md:text-4xl font-bold text-center text-foreground mb-8 md:mb-12">
           Over 100+ 5-Star Google Reviews
         </h2>
         
-        <div className="grid md:grid-cols-2 gap-8 mb-10">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-8 md:mb-10">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-card rounded-xl p-8 shadow-soft hover:shadow-card transition-all duration-300 animate-fade-in"
+              className="bg-card rounded-xl p-6 md:p-8 shadow-soft hover:shadow-card transition-all duration-300 animate-fade-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex mb-4">
@@ -39,7 +39,7 @@ const Testimonials = () => {
                 ))}
               </div>
               
-              <p className="text-muted-foreground mb-4 leading-relaxed">
+              <p className="text-muted-foreground text-sm md:text-base mb-4 leading-relaxed">
                 "{testimonial.text}"
               </p>
               
@@ -55,7 +55,7 @@ const Testimonials = () => {
             href="https://www.google.com/search?sca_esv=6b0b75a31f80727a&rlz=1C1PNPB_enIN1138IN1138&sxsrf=AE3TifN-hKHeV5fSy0U2p4VVgL8Yi5YycA:1761657852720&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-ExGJKPJIQyYWWDtBb14nrNBYjMmreIYYW__TMx5JnMqEJKfe9NOub_Xhe9CALjrJxhLzpfARv0Pn5iHSdevDsnwm6ih7LLDg6Syg7Q-z48w62wvsTg%3D%3D&q=Himala+%E2%80%A2+Centro+de+Masajes+Reviews"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-accent-foreground bg-accent hover:bg-accent/90 rounded-full shadow-soft hover:shadow-card transition-all duration-300 hover:scale-[1.02]"
+            className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 text-sm md:text-base font-medium text-accent-foreground bg-accent hover:bg-accent/90 rounded-full shadow-soft hover:shadow-card transition-all duration-300 hover:scale-[1.02]"
           >
             See all our reviews
           </a>
