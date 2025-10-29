@@ -85,7 +85,7 @@ const BookingForm = () => {
               15% off your first massage
             </p>
             <p className="text-muted-foreground text-sm md:text-base leading-relaxed max-w-xl mx-auto px-2">
-              Barcelona life can drain you fast. At Himala BCN, we help you slow down. Your first massage comes with 15% off—a small push to finally give yourself that break.
+              Life in Barcelona moves fast. At Himala BCN, we help you pause. Get 15% off your first massage
             </p>
           </div>
 
@@ -158,7 +158,7 @@ const BookingForm = () => {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="w-full h-12 md:h-14 text-base md:text-lg font-semibold bg-accent hover:bg-accent/90 text-accent-foreground rounded-full shadow-soft hover:shadow-card transition-all duration-300 hover:scale-[1.02]"
+              className="w-full h-12 md:h-14 text-sm md:text-lg font-semibold bg-accent hover:bg-accent/90 text-accent-foreground rounded-full shadow-soft hover:shadow-card transition-all duration-300 hover:scale-[1.02] px-4"
             >
               {isSubmitting ? "Sending..." : "Claim My 15% Off & Book My Spot"}
             </Button>
