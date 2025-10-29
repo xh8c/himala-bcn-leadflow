@@ -160,7 +160,7 @@ const BookingForm = () => {
               disabled={isSubmitting}
               className="w-full h-12 md:h-14 text-sm md:text-lg font-semibold bg-accent hover:bg-accent/90 text-accent-foreground rounded-full shadow-soft hover:shadow-card transition-all duration-300 hover:scale-[1.02] px-4"
             >
-              {isSubmitting ? "Sending..." : "Claim My 15% Off & Book My Spot"}
+              {isSubmitting ? "Sending..." : "Book My Spot"}
             </Button>
 
             <p className="text-center text-sm text-muted-foreground mt-4">
