@@ -1,3 +1,6 @@
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/translations";
+
 const testimonials = [
   {
     name: "Roselyn Sanvictores",
@@ -12,11 +15,14 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+  const { language } = useLanguage();
+  const t = translations[language].testimonials;
+
   return (
     <section className="py-12 md:py-20 px-4 bg-background">
       <div className="container mx-auto max-w-6xl">
         <h2 className="font-serif text-2xl md:text-4xl font-bold text-center text-foreground mb-8 md:mb-12">
-          Over 100+ 5-Star Google Reviews
+          {t.title}
         </h2>
         
         <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-8 md:mb-10">
@@ -57,7 +63,7 @@ const Testimonials = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-6 md:px-8 py-3 md:py-4 text-sm md:text-base font-medium text-accent-foreground bg-accent hover:bg-accent/90 rounded-full shadow-soft hover:shadow-card transition-all duration-300 hover:scale-[1.02]"
           >
-            See all our reviews
+            {t.button}
           </a>
         </div>
       </div>

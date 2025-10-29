@@ -7,6 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/translations";
 
 const formSchema = z.object({
   fullName: z.string().trim().min(2, "Full name must be at least 2 characters").max(100),
@@ -19,6 +21,8 @@ type FormData = z.infer<typeof formSchema>;
 
 const BookingForm = () => {
   const { toast } = useToast();
+  const { language } = useLanguage();
+  const t = translations[language].booking;
   const [isSubmitting, setIsSubmitting] = useState(false);
   
   const {
@@ -55,8 +59,8 @@ const BookingForm = () => {
 
       if (response.ok) {
         toast({
-          title: "Booking Request Sent! ✨",
-          description: "We'll contact you shortly via WhatsApp to confirm your appointment.",
+          title: t.toast.successTitle,
+          description: t.toast.successDescription,
         });
         reset();
       } else {
@@ -64,8 +68,8 @@ const BookingForm = () => {
       }
     } catch (error) {
       toast({
-        title: "Oops! Something went wrong",
-        description: "Please try again or contact us directly at himalabcn@gmail.com",
+        title: t.toast.errorTitle,
+        description: t.toast.errorDescription,
         variant: "destructive",
       });
     } finally {
@@ -79,25 +83,25 @@ const BookingForm = () => {
         <div className="bg-card rounded-2xl shadow-card p-6 md:p-12 animate-fade-in-slow">
           <div className="text-center mb-6 md:mb-8">
             <h2 className="font-serif text-2xl md:text-4xl font-bold text-foreground mb-2 md:mb-3">
-              Escape Barcelona's chaos
+              {t.title}
             </h2>
             <p className="text-accent text-lg md:text-xl font-semibold mb-3 md:mb-4">
-              15% off your first massage
+              {t.discount}
             </p>
             <p className="text-muted-foreground text-sm md:text-base leading-relaxed max-w-xl mx-auto px-2">
-              Life in Barcelona moves fast. At Himala BCN, we help you pause. Get 15% off your first massage
+              {t.description}
             </p>
           </div>
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 md:space-y-6">
             <div className="space-y-2">
               <Label htmlFor="fullName" className="text-base font-medium">
-                Full Name *
+                {t.fullName} *
               </Label>
               <Input
                 id="fullName"
                 {...register("fullName")}
-                placeholder="Maria García"
+                placeholder={t.placeholders.name}
                 className="h-12 text-base"
               />
               {errors.fullName && (
@@ -107,12 +111,12 @@ const BookingForm = () => {
 
             <div className="space-y-2">
               <Label htmlFor="phone" className="text-base font-medium">
-                Phone Number (WhatsApp) *
+                {t.phone} *
               </Label>
               <Input
                 id="phone"
                 {...register("phone")}
-                placeholder="+34 612 345 678"
+                placeholder={t.placeholders.phone}
                 className="h-12 text-base"
               />
               {errors.phone && (
@@ -122,17 +126,17 @@ const BookingForm = () => {
 
             <div className="space-y-2">
               <Label htmlFor="treatment" className="text-base font-medium">
-                Preferred Treatment *
+                {t.treatment} *
               </Label>
               <Select onValueChange={(value) => setValue("treatment", value)} value={treatment}>
                 <SelectTrigger className="h-12 text-base">
-                  <SelectValue placeholder="Select a treatment..." />
+                  <SelectValue placeholder={t.selectTreatment} />
                 </SelectTrigger>
                 <SelectContent className="bg-popover">
-                  <SelectItem value="relaxing-massage">Relaxing Massage – melt away stress and tension</SelectItem>
-                  <SelectItem value="deep-tissue">Deep Tissue Massage – fix stiff muscles & back pain</SelectItem>
-                  <SelectItem value="hot-stone">Hot Stone / Candle Massage – deep warmth for total calm</SelectItem>
-                  <SelectItem value="not-sure">Not Sure Yet – help me choose the best option</SelectItem>
+                  <SelectItem value="relaxing-massage">{t.treatments.relaxing}</SelectItem>
+                  <SelectItem value="deep-tissue">{t.treatments.deepTissue}</SelectItem>
+                  <SelectItem value="hot-stone">{t.treatments.hotStone}</SelectItem>
+                  <SelectItem value="not-sure">{t.treatments.notSure}</SelectItem>
                 </SelectContent>
               </Select>
               {errors.treatment && (
@@ -142,12 +146,12 @@ const BookingForm = () => {
 
             <div className="space-y-2">
               <Label htmlFor="preferredTime" className="text-base font-medium">
-                Preferred Day & Time *
+                {t.preferredTime} *
               </Label>
               <Input
                 id="preferredTime"
                 {...register("preferredTime")}
-                placeholder="e.g., Saturday afternoon or weekdays after 6pm"
+                placeholder={t.placeholders.time}
                 className="h-12 text-base"
               />
               {errors.preferredTime && (
@@ -160,11 +164,11 @@ const BookingForm = () => {
               disabled={isSubmitting}
               className="w-full h-12 md:h-14 text-sm md:text-lg font-semibold bg-accent hover:bg-accent/90 text-accent-foreground rounded-full shadow-soft hover:shadow-card transition-all duration-300 hover:scale-[1.02] px-4"
             >
-              {isSubmitting ? "Sending..." : "Book My Spot"}
+              {isSubmitting ? t.submitting : t.submit}
             </Button>
 
             <p className="text-center text-sm text-muted-foreground mt-4">
-              We'll confirm your booking via WhatsApp within 24 hours
+              {t.confirmation}
             </p>
           </form>
         </div>
