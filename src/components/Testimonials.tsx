@@ -1,17 +1,12 @@
 const testimonials = [
   {
-    name: "Sofia Martínez",
-    text: "The most relaxing experience I've had in Barcelona. The atmosphere is perfect and the therapists are incredibly skilled.",
+    name: "Roselyn Sanvictores",
+    text: "Súper nice & cozy massage place a few steps of Sagrada Familia. Cherish has wonderful hands. I got the Bali massage and feel brand new!",
     rating: 5,
   },
   {
-    name: "Laura Costa",
-    text: "Himala BCN is my sanctuary. Every visit leaves me feeling renewed and peaceful. Highly recommend the hot stone massage!",
-    rating: 5,
-  },
-  {
-    name: "Ana Rodriguez",
-    text: "Beautiful space, professional service, and genuine care. This spa truly understands the art of relaxation.",
+    name: "Josie Lee",
+    text: "It's proven that Cherish is one of the best massage I have in BCN. She is professional, hardworking and great massage. I have become a regular customer. Thanks.",
     rating: 5,
   },
 ];
@@ -21,10 +16,10 @@ const Testimonials = () => {
     <section className="py-20 px-4 bg-background">
       <div className="container mx-auto max-w-6xl">
         <h2 className="font-serif text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
-          What Our Guests Say
+          Over 100+ 5-Star Google Reviews
         </h2>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 mb-10">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
@@ -53,6 +48,17 @@ const Testimonials = () => {
               </p>
             </div>
           ))}
+        </div>
+        
+        <div className="text-center">
+          <a
+            href="https://www.google.com/search?sca_esv=6b0b75a31f80727a&rlz=1C1PNPB_enIN1138IN1138&sxsrf=AE3TifN-hKHeV5fSy0U2p4VVgL8Yi5YycA:1761657852720&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-ExGJKPJIQyYWWDtBb14nrNBYjMmreIYYW__TMx5JnMqEJKfe9NOub_Xhe9CALjrJxhLzpfARv0Pn5iHSdevDsnwm6ih7LLDg6Syg7Q-z48w62wvsTg%3D%3D&q=Himala+%E2%80%A2+Centro+de+Masajes+Reviews"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-accent-foreground bg-accent hover:bg-accent/90 rounded-full shadow-soft hover:shadow-card transition-all duration-300 hover:scale-[1.02]"
+          >
+            See all our reviews
+          </a>
         </div>
       </div>
     </section>

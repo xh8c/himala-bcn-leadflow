@@ -74,15 +74,18 @@ const BookingForm = () => {
   };
 
   return (
-    <section id="booking-form" className="py-20 px-4 bg-gradient-hero">
+    <section id="booking-form" className="relative -mt-32 px-4 pb-20 z-20">
       <div className="container mx-auto max-w-2xl">
         <div className="bg-card rounded-2xl shadow-card p-8 md:p-12 animate-fade-in-slow">
-          <div className="text-center mb-10">
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Book Your Experience
+          <div className="text-center mb-8">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-3">
+              Escape Barcelona's chaos
             </h2>
-            <p className="text-muted-foreground text-lg">
-              Enjoy <span className="text-accent font-semibold">15% off</span> your first visit
+            <p className="text-accent text-xl font-semibold mb-4">
+              15% off your first massage
+            </p>
+            <p className="text-muted-foreground text-base leading-relaxed max-w-xl mx-auto">
+              Barcelona life can drain you fast. At Himala BCN, we help you slow down. Your first massage comes with 15% off—a small push to finally give yourself that break.
             </p>
           </div>
 

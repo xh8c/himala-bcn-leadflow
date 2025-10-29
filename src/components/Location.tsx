@@ -16,8 +16,8 @@ const Location = () => {
                 <div>
                   <h3 className="font-semibold text-foreground mb-2">Address</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Carrer de la Pau, 12<br />
-                    08002 Barcelona<br />
+                    Carrer de Lepant, 274<br />
+                    L'Eixample, 08013 Barcelona<br />
                     Spain
                   </p>
                 </div>
@@ -27,7 +27,7 @@ const Location = () => {
                 <Phone className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
                 <div>
                   <h3 className="font-semibold text-foreground mb-2">Phone</h3>
-                  <p className="text-muted-foreground">+34 612 345 678</p>
+                  <p className="text-muted-foreground">+34 633 57 59 36</p>
                 </div>
               </div>
               
@@ -42,25 +42,41 @@ const Location = () => {
             
             <div className="space-y-4">
               <h3 className="font-semibold text-foreground mb-4">Opening Hours</h3>
-              <div className="space-y-2 text-muted-foreground">
+              <div className="space-y-2 text-muted-foreground text-sm">
                 <div className="flex justify-between">
-                  <span>Monday - Friday</span>
-                  <span className="font-medium">10:00 - 21:00</span>
+                  <span>Monday</span>
+                  <span className="font-medium">11:00 AM - 9:00 PM</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Tuesday</span>
+                  <span className="font-medium">11:00 AM - 9:00 PM</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Wednesday</span>
+                  <span className="font-medium">11:00 AM - 9:00 PM</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Thursday</span>
+                  <span className="font-medium">11:00 AM - 9:00 PM</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Friday</span>
+                  <span className="font-medium">11:00 AM - 9:00 PM</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Saturday</span>
-                  <span className="font-medium">10:00 - 20:00</span>
+                  <span className="font-medium">11:00 AM - 9:00 PM</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Sunday</span>
-                  <span className="font-medium">11:00 - 19:00</span>
+                  <span className="font-medium">Closed</span>
                 </div>
               </div>
             </div>
           </div>
           
           <a
-            href="https://www.google.com/maps/search/spa+barcelona/@41.3850639,2.1734035,13z"
+            href="https://maps.app.goo.gl/jx6hfupTPz5D6Zfp6"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center w-full px-8 py-4 text-base font-medium text-accent-foreground bg-accent hover:bg-accent/90 rounded-full shadow-soft hover:shadow-card transition-all duration-300 hover:scale-[1.02]"
